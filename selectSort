@@ -1,0 +1,11 @@
+def selectSort(L):
+    if len(L) < 2:return L
+    tmp , k = 0 , 0
+    for i in range(0,len(L)-1):
+        tmp = L[i]; k = i
+        for j in range(i, len(L)):
+            if L[j] < tmp : 
+                tmp = L[j] 
+                k = j
+        L[k] = L[i]; L[i] = tmp
+    return L
