@@ -1,0 +1,10 @@
+def bubbleSort(L):
+    if len(L) < 2: return L
+    tmp = 0
+    for i in range(0,len(L)-1):
+        for j in range(0,len(L)-1):
+            if L[j] > L[j+1]:
+                tmp = L[j+1]
+                L[j+1]= L[j]
+                L[j] = tmp
+    return L
