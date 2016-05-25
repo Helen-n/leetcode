@@ -1,0 +1,18 @@
+    def partition(alist, p, r):
+        i = p-1
+        x = alist[r]
+        for j in range(p, r):
+            if alist[j] <= x:
+                i += 1
+                alist[i], alist[j] = alist[j], alist[i]
+        alist[i+1], alist[r] = alist[r], alist[i+1]
+        return i+1
+ 
+    def quicksort(alist, p, r):
+        if p < r:
+            q = partition(alist, p, r)
+            quicksort(alist, p, q-1)
+            quicksort(alist, q+1, r)
+            
+        return alist
+    print quicksort([5,3,2,1,5,6,9,8,7],0,8)
